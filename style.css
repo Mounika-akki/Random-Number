@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+#heading{
+    text-align: center;
+}
+
+#total{
+    width:60%;
+    height:530px;
+    padding:30px;
+    background-color: rgb(228, 227, 227);
+    border:1px solid rgb(153, 151, 151);
+    box-shadow: 1px 2px 7px 5px rgb(168, 168, 168);;
+    text-align: center;
+    margin: 10px auto;
+}
+
+#dob-inp{
+    margin-top:0;
+    width:70%;
+    height:40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#info{
+    margin-top:20px;
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(53, 49, 49);
+}
+
+#btn-id{
+    width:120px;
+    height:35px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(180deg , rgb(180, 179, 179),rgb(231, 227, 227), rgb(180, 179, 179));
+}
+
+#outputDiv{
+    background-color: rgb(228, 247, 252);
+    width:70%;
+    height:55%;
+    margin : 10px auto;
+    padding: 10px 40px;
+}
+
+output{
+    display:block;
+    text-align: justify;
+    font-size:120%;
+}
+#dobButton{
+    width:100px;
+    height:30px;
+    color: rgb(201, 201, 201);
+    background-color: black;
+    text-align: center;
+}
+#randomDiv{
+    margin:0 auto;
+    widows: 200px;
+    text-align: center;
+}
+#textDivId{
+    font-size: 18px;
+}
+
+@media screen and (max-width:600px){
+    #total{
+        width:95%;
+        padding:0;
+        margin:0 auto;
+    }
+    #outputDiv{
+        padding:10px;
+    }
+    output{
+        font-size: 90%;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dob</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>
+        var br = document.createElement("br");
+        var hr = document.createElement("hr");
+
+
+        var heading = document.createElement("h1");
+        heading.id = "heading";
+        heading.innerHTML = "Age Calculator"
+
+        var div = document.createElement("div");
+        div.id = "total";
+
+        document.body.append(heading, div);
+
+        var info = createElemWithId("p", "info");
+        info.innerHTML = "Select your Date of Birth";
+
+        var dateInp = createElemWithId('input', 'dob-inp', 'inp');
+        dateInp.setAttribute("type", "date");
+        dateInp.setAttribute("for", "dob");
+        dateInp.setAttribute("value", "1990-01-01");
+
+        dateInp.max = new Date().toISOString().split("T")[0];
+
+        var todayDate = new Date().toLocaleString();
+        div.innerHTML = "Today's Date : " + todayDate;
+
+        var button = createElemWithId('button', 'btn-id');
+        button.innerHTML = "Calculate";
+        button.onclick = convertion;
+
+        var outputDiv = createElemWithId("div", "outputDiv");
+        var output = createElemWithId('output', 'outputId');
+        output.setAttribute("for", "dob");
+        outputDiv.append(output);
+        div.append(info, dateInp, br, button, hr, outputDiv);
+
+        var randomDiv = createElemWithId("div", "randomDiv");
+        var anchor = createElemWithId("a", "anchor");
+        anchor.setAttribute("href", "random.html");
+        var dobButton = createElemWithId("button", "dobButton");
+        dobButton.setAttribute("type", "button")
+        dobButton.innerHTML = "Click Here"
+        anchor.append(dobButton);
+        var textDiv = createElemWithId("div", "textDivId");
+        textDiv.innerHTML = "For Random Number Generator";
+        randomDiv.append(anchor, textDiv)
+        document.body.append(randomDiv);
+
+        function createElemWithId(elem, elemId, elemClass) {
+            var element = document.createElement(elem);
+            element.setAttribute("id", elemId);
+            element.setAttribute("class", elemClass);
+            return element;
+        }
+
+        function convertion() {
+            var inputDate = new Date(document.getElementById('dob-inp').value);
+            var currentDate = new Date();
+            var milliseconds = parseInt(currentDate.getTime() - inputDate.getTime());
+            var seconds = parseInt(milliseconds / 1000);
+            var minutes = parseInt(seconds / 60);
+            var hours = parseInt(minutes / 60);
+            var days = parseInt(hours / 24);
+            var years = currentDate.getFullYear() - inputDate.getFullYear();
+            var months = (years * 12) + (currentDate.getMonth() - inputDate.getMonth());
+            var result = years + " years<br>or " + months + " Months<br>or " + days + " Days<br>or " + hours + " Hours<br>or " + minutes + " Minutes<br>or " + seconds + " Seconds ";
+            output.innerHTML = result;
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
